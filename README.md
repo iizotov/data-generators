@@ -1,5 +1,7 @@
 # Azure Event Hub and Blob Storage Sensor Data Generators
-Simple Python 3 data generators for Azure Event Hubs and Blob Storage that generates sensor-like telemetry with the occasionally missing 'pressure' field and stores it as line-delimited JSON files (in ~10M chunks) in Azure Blob Storage as well as pushes it into an Event Hub, row by row.
+Simple Python 3 data generators for Azure Event Hubs and Blob Storage that generate sensor-like telemetry with the occasionally missing 'pressure' field:
+1. `insert_blob.py` generates and stores the data in Azure Blob Storage as line-delimited JSON files (in ~10M chunks)
+2. `insert_eh.py` generates telemetry as pushes it into an Azure Event Hub, row by row
 
 Sample data (notice a missing field in the second message)
 ```json
