@@ -65,9 +65,9 @@ while True:
 
         if current_size >= max_size:
             dtnow = datetime.utcnow()
-            filename = str(dtnow.year) + '/' + str(dtnow.month) + '/' + str(dtnow.day) + '/' + \
-                str(dtnow.hour) + '/' + str(int(dtnow.minute) - int(dtnow.minute) % 15) + '/' + \
-                str(dtnow.second) + '.' + str(dtnow.microsecond) + ".json"
+            filename = str(dtnow.year) + '/' + str(dtnow.month).zfill(2) + '/' + str(dtnow.day).zfill(2) + '/' + \
+                str(dtnow.hour).zfill(2) + '/' + str(int(dtnow.minute) - int(dtnow.minute) % 15).zfill(2) + '/' + \
+                str(dtnow.second).zfill(2) + '.' + str(dtnow.microsecond).zfill(5) + ".json"
             task_queue.put((msg_array, path + filename))
             print("\nupload queue size is {}".format(task_queue.qsize()))
             msg_array = ''
