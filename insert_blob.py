@@ -64,7 +64,7 @@ while True:
         progress = int( current_size / max_size * 100)
 
         if current_size >= max_size:
-            task_queue.put((msg_array, path + datetime.now().isoformat().replace(':', '-') + ".json"))
+            task_queue.put((msg_array, path + datetime.now().isoformat(timespec='minutes').replace(':', '-') + ".json"))
             print("\nupload queue size is {}".format(task_queue.qsize()))
             msg_array = ''
             time.sleep(sleep_time)
